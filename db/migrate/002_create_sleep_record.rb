@@ -1,4 +1,4 @@
-class CreateSleepRecord < ActiveRecord::Migration[5.2]
+class CreateSleepRecord < ActiveRecord::Migration[7.0]
   def change
     create_table :sleep_records do |t|
       t.references :user, null: false, foreign_key: true
