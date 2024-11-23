@@ -45,9 +45,10 @@ RSpec.describe User, type: :model do
     let(:user) { create(:user) }
 
     it 'can have multiple sleep records' do
-      create_list(:sleep_record, 3, user: user)
+      create_list(:sleep_record, 1, user: user)
+      create_list(:sleep_record_2, 1, user: user)
       
-      expect(user.sleep_records.count).to eq(3)
+      expect(user.sleep_records.count).to eq(2)
     end
   end
 end

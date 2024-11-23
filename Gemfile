@@ -27,6 +27,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'sidekiq'
 gem 'jbuilder'
 gem 'rspec'
+gem 'webrick', '~> 1.7'
+gem 'active_model_serializers'
 
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
@@ -39,6 +41,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
   gem 'listen', '~> 3.5'
+  gem 'faker'
 end
 
 group :development do

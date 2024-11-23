@@ -4,4 +4,12 @@ class User < ApplicationRecord
   has_many :follows_as_followed, class_name: 'Follow', foreign_key: 'followed_id'
   has_many :following, through: :follows_as_follower, source: :followed
   has_many :followers, through: :follows_as_followed, source: :follower
+
+  def clock_ins
+    sleep_records.clock_ins
+  end
+
+  def clock_outs
+    sleep_records.clock_outs
+  end
 end
