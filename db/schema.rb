@@ -26,8 +26,8 @@ ActiveRecord::Schema[7.1].define(version: 6) do
 
   create_table "sleep_records", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.datetime "clock_in_time", null: false
-    t.datetime "clock_out_time", null: false
+    t.datetime "clock_in_time"
+    t.datetime "clock_out_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "clock_in_time"], name: "index_sleep_records_on_user_id_and_clock_in_time"

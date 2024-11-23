@@ -23,6 +23,12 @@ FactoryBot.define do
   factory :sleep_record do
     association :user
     clock_in_time { Time.current }
-    clock_out_time { clock_in_time + 8.hours }
+    clock_out_time { nil }
+  end
+
+  factory :sleep_record_2, class: SleepRecord do
+    association :user
+    clock_in_time { nil }
+    clock_out_time { Time.current + 1.day }
   end
 end
