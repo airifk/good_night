@@ -6,7 +6,7 @@ class FollowSleepRecordSerializer < ActiveModel::Serializer
   end
 
   def name
-    object.user.name
+    object.user_name
   end
 
   def duration

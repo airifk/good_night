@@ -87,4 +87,14 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+  config.active_job.queue_adapter = :sidekiq
+  # This also configures session_options for use below
+  config.session_store :cookie_store, key: "app_sess"
+
+  # Required for all session management (regardless of session_store)
+  config.middleware.use ActionDispatch::Cookies
+
+  config.middleware.use config.session_store, config.session_options
+  config.active_record.reads_from_replica = true
+  config.active_record.writes_to_primary = true
 end
