@@ -131,6 +131,8 @@ GEM
       net-imap
       net-pop
       net-smtp
+    makara (0.5.1)
+      activerecord (>= 5.2.0)
     marcel (1.0.4)
     mini_mime (1.1.5)
     minitest (5.25.2)
@@ -256,6 +258,7 @@ DEPENDENCIES
   faker
   jbuilder
   listen (~> 3.5)
+  makara
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rack-cors
