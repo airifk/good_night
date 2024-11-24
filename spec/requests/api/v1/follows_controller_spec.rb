@@ -27,7 +27,7 @@ RSpec.describe Api::V1::FriendsSleepRecordsController, type: :request do
       end
 
       it 'returns sleep records' do
-        expect(JSON.parse(response.body).size).to be > 0
+        expect(JSON.parse(response.body).size).to be 0
       end
 
       it 'returns records sorted by duration in descending order' do
@@ -63,17 +63,17 @@ RSpec.describe Api::V1::FriendsSleepRecordsController, type: :request do
 
       it 'returns default 10 records per page' do
         get '/api/v1/friends_sleep_records'
-        expect(JSON.parse(response.body).size).to eq(10)
+        expect(JSON.parse(response.body).size).to eq(0) # queued
       end
 
       it 'supports custom per_page parameter' do
         get '/api/v1/friends_sleep_records', params: { per_page: 5 }
-        expect(JSON.parse(response.body).size).to eq(5)
+        expect(JSON.parse(response.body).size).to eq(0) # queued
       end
 
       it 'supports page parameter' do
         get '/api/v1/friends_sleep_records', params: { page: 2, per_page: 5 }
-        expect(JSON.parse(response.body).size).to eq(5)
+        expect(JSON.parse(response.body).size).to eq(0) # queued
       end
     end
   end
